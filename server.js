@@ -23,3 +23,9 @@ mongoose.connect(process.env.MONGO_URI, {
 .catch((err) => {
   console.error("❌ Failed to connect to MongoDB", err);
 });
+
+require('dotenv').config();
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('✅ Connected to MongoDB Atlas'))
+  .catch(err => console.error('❌ MongoDB connection error:', err));
